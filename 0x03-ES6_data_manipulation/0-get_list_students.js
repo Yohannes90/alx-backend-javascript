@@ -1,4 +1,4 @@
-const getListStudents = function() {
+const getListStudents = function () {
   return [
     { id: 1, firstName: 'Guillaume', location: 'San Francisco' },
     { id: 2, firstName: 'James', location: 'Columbia' },
