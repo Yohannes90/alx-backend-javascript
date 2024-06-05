@@ -1,33 +1,31 @@
-interface Student {
-    firstName: string;
-    lastName: string;
-    age: number;
+interface Teacher {
+    readonly firstName: string;
+    readonly lastName: string;
+    fullTimeEmployee: boolean;
     location: string;
+    yearsOfExperience?: number;
+    [key: string]: any
 }
-const student1: Student = {
+
+const teacher3: Teacher = {
+    firstName: 'John',
+    fullTimeEmployee: false,
+    lastName: 'Doe',
+    location: 'London',
+    contract: false,
+};
+
+console.log(teacher3);
+
+interface Directors extends Teacher {
+    numberOfReports: number;
+}
+
+const director1: Directors = {
     firstName: 'John',
     lastName: 'Doe',
-    age: 22,
-    location: 'New York'
+    location: 'London',
+    fullTimeEmployee: true,
+    numberOfReports: 17,
 };
-const student2: Student = {
-    firstName: 'Jane',
-    lastName: 'Doe',
-    age: 25,
-    location: 'New York'
-};
-const studentList: Student[] = [student1, student2];
-const table = document.createElement('table');
-const tableBody = document.createElement('tbody');
-studentList.forEach((student) => {
-    const row = document.createElement('tr');
-    const nameCell = document.createElement('td');
-    const locationCell = document.createElement('td');
-    nameCell.textContent = student.firstName;
-    locationCell.textContent = student.location;
-    row.appendChild(nameCell);
-    row.appendChild(locationCell);
-    tableBody.appendChild(row);
-});
-table.appendChild(tableBody);
-document.body.appendChild(table);
+console.log(director1);
