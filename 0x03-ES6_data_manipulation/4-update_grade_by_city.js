@@ -5,7 +5,7 @@ const updateStudentGradeByCity = (students, city, newGrades) => {
       const studentGrade = newGrades.find((grade) => grade.studentId === student.id);
       return {
         ...student,
-        grade: studentGrade ? studentGrade.grade : 'N/A',
+        grade: studentGrade ? studentGrade.grade : 'N/A'
       };
     });
 };
